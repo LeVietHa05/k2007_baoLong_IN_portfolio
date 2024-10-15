@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  min-width: 1400px;
+  color: #85898d;
+  background-color: #1b1b1b;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+li {
+  list-style-type: none;
+}
+
+.d-flex {
+  display: flex;
+}
+.d-iblock {
+  display: inline-block;
+}
+.d-none {
+  display: none;
+}
+.d-grid {
+  display: grid;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.t-size-3em {
+  font-size: 3em;
+}
+
+.p-body-bottom {
+ padding-bottom: 112px;
+}
+
+.border-test {
+  border: 1px solid red;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #1b1b1b;
+}
+
+#nav {
+  padding: 48px 117px;
+  color: #85898d;
+  background-color: #1b1b1b;
+  font-family: "BBManualMono";
+}
+#author-name p {
+  color: #fff;
+  /* margin-left: 267px; */
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: "BBManualMono";
+  font-size: 4rem;
+  font-weight: 700;
+  position: absolute;
+  top: calc(88px - 0.5rem);
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+#menu {
+  margin-top: calc(48px * 2 + 96px);
+  padding: 48px 20px;
+}
+
+#menu p span:hover {
+  color: #00b7ff;
+  cursor: pointer;
+  background-color: #85898d;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #1b1b1b;
+}
+
+.gallery {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  background: #d9d9d9;
+  backdrop-filter: blur(10px);
+  font-family: Helvetica;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 0.8;
+}
+.overlay-text {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay-year {
+  font-size: 1.5rem;
+}
