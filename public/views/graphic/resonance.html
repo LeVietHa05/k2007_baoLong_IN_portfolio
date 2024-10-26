@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Resonance</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- font  -->
+    <style>
+        @font-face {
+            font-family: 'BBManualMono';
+            src: url(../fonts/font1.otf);
+        }
+    </style>
+    <script src="../../javascripts/data.js"></script>
+</head>
+
+<body>
+
+    <header class=" d-flex">
+        <nav class="d-flex  t-size-3em" id="nav">
+            <ul class="d-flex ">
+                <li class="text-uppercase d-iblock ">info</li>
+                <li class="text-uppercase d-iblock sub-nav-hover" style="margin-left: 40px ; width: 10rem;">
+                    <p>work<i class=" fas fa-caret-down"></i></p>
+                    <ul id="sub-nav">
+                        <li><a href="/">gallery design</a> </li>
+                        <li><a href="/">3d</a></li>
+                        <li><a href="/">fashion design</a></li>
+                        <li><a href="/">photoshoots</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="author-name" class="text-uppercase t-size-3em " style=" width: 100%;">
+            <p>le nguyen bao long</p>
+        </div>
+    </header>
+
+    <div id="resonance" class="gallery mt-special">
+
+    </div>
+    <div id="bigview">
+
+    </div>
+
+    <script>
+        let resonance = document.getElementById('resonance');
+        let resonanceData = graphicData['resonance'];
+        let resonanceItemImgs = resonanceData.imgs.map(item => {
+
+            return `<div class="gallery-item">
+            <img src="../${item}" alt="">
+            <div class="overlay" onclick="bigView('${item}')">
+               
+            </div>
+        </div>`;
+        });
+
+        resonance.innerHTML = resonanceItemImgs.join('');
+
+        let bigview = document.getElementById('bigview');
+
+        bigview.addEventListener('click', function () {
+            bigview.style.display = 'none';
+        });
+        function bigView(img) {
+            console.log(img);
+            bigview.innerHTML = `<img src="../${img}" alt="">`;
+            bigview.style.display = 'flex';
+        }
+
+
+    </script>
+</body>
+
+</html>

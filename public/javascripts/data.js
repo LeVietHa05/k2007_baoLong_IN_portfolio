@@ -160,18 +160,112 @@ let graphicData = {
 }
 
 
-let photoshootData = {
+let photoshootsData = {
     bull_born: {
         thumbnail: "./images/photo_img_1.png",
         imgs: [
-            "./images/grad_bull_born_1.png",
-            "./images/grad_bull_born_2.png",
-            "./images/grad_bull_born_3.png",
-            "./images/grad_bull_born_4.png",
-            "./images/grad_bull_born_5.png",
+            "./images/photo_bull_born_1.png",
+            "./images/photo_bull_born_2.png",
+            "./images/photo_bull_born_3.png",
+            "./images/photo_bull_born_4.png",
+            "./images/photo_bull_born_5.png",
         ],
         overlay_text: "Bull born under the sky",
         overlay_year: "October 2024",
-        href: "/photoshoot/bull_born"
-    }
+        href: "/photoshoots/bull_born"
+    },
+    george: {
+        thumbnail: "./images/photo_img_2.png",
+        imgs: [
+            "./images/photo_george_1.png",
+            "./images/photo_george_2.png",
+            "./images/photo_george_3.png",
+            "./images/photo_george_4.png",
+            "./images/photo_george_5.png",
+            "./images/photo_george_6.png",
+            "./images/photo_george_7.png",
+            "./images/photo_george_8.png",
+            "./images/photo_george_9.png",
+            "./images/photo_george_10.png",
+            "./images/photo_george_11.png",
+            "./images/photo_george_12.png",
+            "./images/photo_george_13.png",
+            "./images/photo_george_14.png",
+            "./images/photo_george_15.png",
+        ],
+        overlay_text: "George orwell's testimonies",
+        overlay_year: "August 2024",
+        href: "/photoshoots/george"
+    },
+    equinox: {
+        thumbnail: "./images/photo_img_3.png",
+        imgs: [
+            "./images/photo_equinox_1.png",
+            "./images/photo_equinox_2.png",
+            "./images/photo_equinox_3.png",
+            "./images/photo_equinox_4.png",
+            "./images/photo_equinox_5.png",
+            "./images/photo_equinox_6.png",
+            "./images/photo_equinox_7.png",
+            "./images/photo_equinox_8.png",
+            "./images/photo_equinox_9.png",
+        ],
+        overlay_text: "Equinox",
+        overlay_year: "July 2024",
+        href: "/photoshoots/equinox"
+    },
+    purging: {
+        thumbnail: "./images/photo_img_4.png",
+        imgs: [
+            "./images/photo_purging_1.png",
+            "./images/photo_purging_2.png",
+            "./images/photo_purging_3.png",
+            "./images/photo_purging_4.png",
+            "./images/photo_purging_5.png",
+            "./images/photo_purging_6.png",
+            "./images/photo_purging_7.png",
+            "./images/photo_purging_8.png",
+        ],
+        overlay_text: "Purging",
+        overlay_year: "June 2024",
+        href: "/photoshoots/purging"
+    },
+    ascendancy: {
+        thumbnail: "./images/photo_img_5.png",
+        imgs: [
+            "./images/photo_ascendancy_1.png",
+            "./images/photo_ascendancy_2.png",
+            "./images/photo_ascendancy_3.png",
+            "./images/photo_ascendancy_4.png",
+            "./images/photo_ascendancy_5.png",
+            "./images/photo_ascendancy_6.png",
+            "./images/photo_ascendancy_7.png",
+            "./images/photo_ascendancy_8.png",
+            "./images/photo_ascendancy_9.png",
+            "./images/photo_ascendancy_10.png",
+            "./images/photo_ascendancy_11.png",
+        ],
+        overlay_text: "the ascendancy",
+        overlay_year: "May 2024",
+        href: "/photoshoots/ascendancy"
+    },
+    dearth: {
+        thumbnail: "./images/photo_img_6.png",
+        imgs: [
+            "./images/photo_dearth_1.png",
+            "./images/photo_dearth_2.png",
+            "./images/photo_dearth_3.png",
+            "./images/photo_dearth_4.png",
+            "./images/photo_dearth_5.png",
+            "./images/photo_dearth_6.png",
+            "./images/photo_dearth_7.png",
+            "./images/photo_dearth_8.png",
+            "./images/photo_dearth_9.png",
+            "./images/photo_dearth_10.png",
+            "./images/photo_dearth_11.png",
+        ],
+        overlay_text: "the dearth within yes",
+        overlay_year: "April 2024",
+        href: "/photoshoots/dearth"
+    },
 }

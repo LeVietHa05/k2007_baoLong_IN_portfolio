@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Express</title>
+  <title>Bao Long</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -12,7 +12,7 @@
       src: url(./fonts/font1.otf);
     }
   </style>
-  <script src="javascripts/data.js"></script>
+  <script src="../javascripts/data.js"></script>
 </head>
 
 <body>
@@ -21,10 +21,13 @@
     <nav class="d-flex  t-size-3em" id="nav">
       <ul class="d-flex ">
         <li class="text-uppercase d-iblock ">info</li>
-        <li class="text-uppercase d-iblock " style="margin-left: 40px ; width: 10rem;">
+        <li class="text-uppercase d-iblock sub-nav-hover" style="margin-left: 40px ; width: 10rem;">
           <p>work<i class=" fas fa-caret-down"></i></p>
-          <ul id="suv-nav">
-            <!-- <li></li> -->
+          <ul id="sub-nav">
+            <li>gallery design</li>
+            <li>3d</li>
+            <li>fashion design</li>
+            <li>photoshoots</li>
           </ul>
         </li>
       </ul>
@@ -34,14 +37,14 @@
     </div>
   </header>
 
-  <section id="menu">
+  <div id="menu">
     <p style=" text-align: center; font-size: 9rem; margin: auto;" class="text-uppercase">
       <span>#1. gallery design</span><br>
       <span>#2. 3d</span><br>
       <span>#3. fashion design</span><br>
       <span>#4. photoshoots</span><br>
     </p>
-  </section>
+  </div>
 
   <section id="graphic" class="d-grid gallery">
   </section>
@@ -68,59 +71,98 @@
     })
   </script>
 
+  <section id="3d" class="gallery">
+    <div class="gallery-item">
+      <img src="./images/3d_img_1.png" alt="">
+      <div class="overlay">
+        <div class="overlay-text">citadel of forever chocolate farmer<br><span class="overlay-year">September
+            2024</span></div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/3d_img_2.png" alt="">
+      <div class="overlay">
+        <div class="overlay-text">citadel of forever chocolate farmer<br><span class="overlay-year">September
+            2024</span></div>
+      </div>
+    </div>
+  </section>
+
   <section id="fashion" class="gallery">
     <div class="gallery-item">
       <img src="./images/fashion_img_1.png" alt="">
       <div class="overlay">
-        <div class="overlay-text">bull born under the sky<br><span class="overlay-year">2024</span></div>
+        <div class="overlay-text" onclick="toHref('/fashion/equinox')">equinox<br><span class="overlay-year">july 2024</span></div>
       </div>
     </div>
   </section>
 
   <section id="photoshoots" class="gallery p-body-bottom">
-    <div class="gallery-item">
-      <img src="./images/photo_img_1.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">george orwell's testimonies<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/photo_img_2.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">equinox<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/photo_img_3.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">purgin axiom<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/photo_img_4.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">the ascendancy<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/photo_img_5.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">equinox<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/photo_img_6.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">the dearth within yes<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
   </section>
+
+  <script>
+    let photoshoots = document.getElementById('photoshoots');
+    let photoshootsKeys = Object.keys(photoshootsData);
+    let photoshootsItemImgs = photoshootsKeys.map(item => {
+
+      return `<div class="gallery-item">
+        <img src="${photoshootsData[item].thumbnail}" alt="">
+        <div class="overlay">
+          <div class="overlay-text">${photoshootsData[item].overlay_text}<br><span class="overlay-year">${photoshootsData[item].overlay_year}</span></div>
+        </div>
+      </div>`
+    })
+    photoshoots.innerHTML = photoshootsItemImgs.join('');
+
+    let photoshootsItems = document.querySelectorAll('#photoshoots .gallery-item');
+    photoshootsItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        window.location.href = photoshootsData[photoshootsKeys[index]].href;
+      })
+    })
+  </script>
 
   <footer id="footer" class=" d-flex align-items-center justify-content-center" style="gap: 32px; padding: 30px 0;">
     <img src="./images/behance_icon.svg" alt="">
     <img class="" src="./images/instagram_icon.svg" alt="">
 
   </footer>
+
+
+  <script>
+
+    function toHref(href) {
+      window.location.href = href
+    }
+    //hide all section until click the menu or nav 
+    let sections = document.querySelectorAll('section');
+    sections.forEach(item => {
+      item.style.display = 'none';
+    })
+
+    //show section when click the menu
+    let menu = document.getElementById('menu');
+    let menuItems = menu.querySelectorAll('span');
+    menuItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        sections.forEach(item => {
+          item.style.display = 'none';
+        })
+        sections[index].style.display = 'grid';
+      })
+    })
+
+    //show the section when click the nav
+    let sub_nav_items = document.querySelectorAll('#sub-nav li');
+    sub_nav_items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        sections.forEach(item => {
+          item.style.display = 'none';
+        })
+        sections[index].style.display = 'grid';
+      })
+    })
+  </script>
 </body>
 
 </html>

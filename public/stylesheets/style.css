@@ -23,6 +23,14 @@ li {
   list-style-type: none;
 }
 
+img {
+  object-fit: cover;
+}
+
+.mt-special {
+  margin-top: calc(48px * 2 + 96px) !important;
+}
+
 .d-flex {
   display: flex;
 }
@@ -53,7 +61,7 @@ li {
 }
 
 .p-body-bottom {
- padding-bottom: 112px;
+  padding-bottom: 112px;
 }
 
 .border-test {
@@ -74,7 +82,28 @@ header {
   color: #85898d;
   background-color: #1b1b1b;
   font-family: "BBManualMono";
+  position: relative;
 }
+.sub-nav-hover:hover #sub-nav {
+  display: block;
+}
+
+#sub-nav {
+  width: 400px;
+  position: absolute;
+  padding: 30px 50px;
+  font-size: 32px;
+  color: #85898d;
+  background-color: #303030;
+  font-family: "BBManualMono";
+  display: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+#sub-nav li:hover {
+  color: white;
+}
+
 #author-name p {
   color: #fff;
   /* margin-left: 267px; */
@@ -155,4 +184,42 @@ header {
 }
 .overlay-year {
   font-size: 1.5rem;
+}
+
+#bigview {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#bigview img {
+  width: 60%;
+}
+
+#brainstorming, #bull_born {
+  margin: auto;
+  max-width: 1368px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+#hanoi_model,
+#rock_club,
+#song_vien,
+#Fequinox {
+  max-width: 1368px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#rock_club img {
+  width: 100%;
+  object-fit: cover;
 }
