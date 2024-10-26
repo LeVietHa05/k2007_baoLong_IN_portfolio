@@ -12,6 +12,7 @@
       src: url(./fonts/font1.otf);
     }
   </style>
+  <script src="javascripts/data.js"></script>
 </head>
 
 <body>
@@ -42,71 +43,30 @@
     </p>
   </section>
 
-  <section id="gallery" class="d-grid gallery">
-
-    <div class="gallery-item">
-      <img src="./images/grad_img_1.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">resonance<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_2.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">song vien<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_3.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">CNN rock club<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_4.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">vong nga<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_5.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">l@mode_grunge_collection<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_6.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">3c lab brainstorming<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_7.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">t-shirt gallery<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_8.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">international vietnam model united nations<br><span class="overlay-year">2024</span>
-        </div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_9.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">mi chau - a cover by crc<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/grad_img_10.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">hanoi model united nations<br><span class="overlay-year">2024</span></div>
-      </div>
-    </div>
-
+  <section id="graphic" class="d-grid gallery">
   </section>
+
+  <script>
+    let graphic = document.getElementById('graphic');
+    let graphicKeys = Object.keys(graphicData);
+    let graphicItemImgs = graphicKeys.map(item => {
+
+      return `<div class="gallery-item">
+        <img src="${graphicData[item].thumbnail}" alt="">
+        <div class="overlay">
+          <div class="overlay-text">${graphicData[item].overlay_text}<br><span class="overlay-year">${graphicData[item].overlay_year}</span></div>
+        </div>
+      </div>`
+    })
+    graphic.innerHTML = graphicItemImgs.join('');
+
+    let graphicItems = document.querySelectorAll('#graphic .gallery-item');
+    graphicItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        window.location.href = graphicData[graphicKeys[index]].href;
+      })
+    })
+  </script>
 
   <section id="fashion" class="gallery">
     <div class="gallery-item">
