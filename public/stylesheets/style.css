@@ -16,7 +16,8 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #85898d;
+  text-decoration: none;
 }
 
 li {
@@ -103,7 +104,7 @@ header {
   cursor: pointer;
   text-decoration: none;
 }
-#sub-nav li:hover {
+#sub-nav li:hover, #sub-nav li a:hover {
   color: white;
 }
 
@@ -114,7 +115,7 @@ header {
   justify-content: center;
   align-content: center;
   font-family: "BBManualMono";
-  font-size:2rem;
+  font-size: 2rem;
   font-weight: 700;
   position: absolute;
   top: calc(40px - 0.5rem);
@@ -140,7 +141,7 @@ header {
   background-color: #1b1b1b;
 }
 
-#footer svg:hover path  {
+#footer svg:hover path {
   fill: white !important;
   cursor: pointer;
 }
@@ -159,6 +160,17 @@ header {
 
 .gallery-item {
   position: relative;
+}
+
+.gallery-2 {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery-3 {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .overlay {
@@ -199,7 +211,7 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(94, 94, 94, 0.7);
   z-index: 1000;
   display: none;
   align-items: center;
@@ -210,7 +222,19 @@ header {
   width: 60%;
 }
 
-#brainstorming, #bull_born {
+#brainstorming,
+#bull_born,
+#grunge_collection,
+#international,
+#mi_chau,
+#resonance,
+#t_shirt_graphic,
+#vong_nga,
+#ascendancy,
+#dearth,
+#equinox,
+#george,
+#purging {
   margin: auto;
   max-width: 1368px;
   grid-template-columns: repeat(1, 1fr);

@@ -48,13 +48,27 @@
         let grunge_collection = document.getElementById('grunge_collection');
         let grunge_collectionData = graphicData['grunge_collection'];
         let grunge_collectionItemImgs = grunge_collectionData.imgs.map(item => {
-
-            return `<div class="gallery-item">
-            <img src="../${item}" alt="">
-            <div class="overlay" onclick="bigView('${item}')">
-               
-            </div>
-        </div>`;
+            if (item.length > 3) {
+                return `<div class="gallery-item">
+                            <img src="../${item}" alt="">
+                            <div class="overlay" onclick="bigView('${item}')">
+                            
+                            </div>
+                        </div>`;
+            } else {
+                let tempEl = '';
+                item.forEach(e => {
+                    tempEl += `<div class="gallery-item">
+                    <img src="../${e}" alt="">
+                    <div class="overlay" onclick="bigView('${e}')">
+                    
+                    </div>
+                </div>`;
+                });
+                return `<div class=" gallery-${item.length}">
+                            ${tempEl}
+                        </div>`;
+            }
         });
 
         grunge_collection.innerHTML = grunge_collectionItemImgs.join('');

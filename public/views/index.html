@@ -24,7 +24,7 @@
         <li class="text-uppercase d-iblock sub-nav-hover" style="margin-left: 40px ; width: 10rem;">
           <p>work<i class=" fas fa-caret-down"></i></p>
           <ul id="sub-nav">
-            <li>gallery design</li>
+            <li>Graphic design</li>
             <li>3d</li>
             <li>fashion design</li>
             <li>photoshoots</li>
@@ -39,7 +39,7 @@
 
   <div id="menu">
     <p style=" text-align: center; font-size: 9rem; margin: auto;" class="text-uppercase">
-      <span>#1. gallery design</span><br>
+      <span>#1. Graphic design</span><br>
       <span>#2. 3d</span><br>
       <span>#3. fashion design</span><br>
       <span>#4. photoshoots</span><br>
@@ -74,16 +74,16 @@
   <section id="3d" class="gallery">
     <div class="gallery-item">
       <img src="./images/3d_img_1.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">citadel of forever chocolate farmer<br><span class="overlay-year">September
-            2024</span></div>
+      <div class="overlay" onclick="bigView('./images/3d_img_1.png')">
+        <div class="overlay-text"><br><span class="overlay-year">
+            </span></div>
       </div>
     </div>
     <div class="gallery-item">
       <img src="./images/3d_img_2.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text">citadel of forever chocolate farmer<br><span class="overlay-year">September
-            2024</span></div>
+      <div class="overlay" onclick="bigView('./images/3d_img_2.png')">
+        <div class="overlay-text"><br><span class="overlay-year">
+            </span></div>
       </div>
     </div>
   </section>
@@ -91,8 +91,8 @@
   <section id="fashion" class="gallery">
     <div class="gallery-item">
       <img src="./images/fashion_img_1.png" alt="">
-      <div class="overlay">
-        <div class="overlay-text" onclick="toHref('/fashion/equinox')">equinox<br><span class="overlay-year">july
+      <div class="overlay"  onclick="toHref('/fashion/equinox')">
+        <div class="overlay-text">equinox<br><span class="overlay-year">july
             2024</span></div>
       </div>
     </div>
@@ -100,6 +100,11 @@
 
   <section id="photoshoots" class="gallery p-body-bottom">
   </section>
+
+
+  <div id="bigview">
+
+  </div>
 
   <script>
     let photoshoots = document.getElementById('photoshoots');
@@ -175,6 +180,17 @@
         sections[index].style.display = 'grid';
       })
     })
+
+    //big view
+
+    bigview.addEventListener('click', function () {
+      bigview.style.display = 'none';
+    });
+    function bigView(img) {
+      console.log(img);
+      bigview.innerHTML = `<img src="../${img}" alt="">`;
+      bigview.style.display = 'flex';
+    }
   </script>
 </body>
 

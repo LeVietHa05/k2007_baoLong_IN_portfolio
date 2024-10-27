@@ -49,12 +49,27 @@
         let ascendancyData = photoshootsData['ascendancy'];
         let ascendancyItemImgs = ascendancyData.imgs.map(item => {
 
-            return `<div class="gallery-item">
-            <img src="../${item}" alt="">
-            <div class="overlay" onclick="bigView('${item}')">
-               
-            </div>
-        </div>`;
+            if (item.length > 3) {
+                return `<div class="gallery-item">
+                            <img src="../${item}" alt="">
+                            <div class="overlay" onclick="bigView('${item}')">
+                            
+                            </div>
+                        </div>`;
+            } else {
+                let tempEl = '';
+                item.forEach(e => {
+                    tempEl += `<div class="gallery-item">
+                    <img src="../${e}" alt="">
+                    <div class="overlay" onclick="bigView('${e}')">
+                    
+                    </div>
+                </div>`;
+                });
+                return `<div class=" gallery-${item.length}">
+                            ${tempEl}
+                        </div>`;
+            }
         });
 
         ascendancy.innerHTML = ascendancyItemImgs.join('');

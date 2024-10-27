@@ -48,13 +48,27 @@
         let t_shirt_graphic = document.getElementById('t_shirt_graphic');
         let t_shirt_graphicData = graphicData['t_shirt_graphic'];
         let t_shirt_graphicItemImgs = t_shirt_graphicData.imgs.map(item => {
-
-            return `<div class="gallery-item">
-            <img src="../${item}" alt="">
-            <div class="overlay" onclick="bigView('${item}')">
-               
-            </div>
-        </div>`;
+            if (item.length > 3) {
+                return `<div class="gallery-item">
+                            <img src="../${item}" alt="">
+                            <div class="overlay" onclick="bigView('${item}')">
+                            
+                            </div>
+                        </div>`;
+            } else {
+                let tempEl = '';
+                item.forEach(e => {
+                    tempEl += `<div class="gallery-item">
+                    <img src="../${e}" alt="">
+                    <div class="overlay" onclick="bigView('${e}')">
+                    
+                    </div>
+                </div>`;
+                });
+                return `<div class=" gallery-${item.length}">
+                            ${tempEl}
+                        </div>`;
+            }
         });
 
         t_shirt_graphic.innerHTML = t_shirt_graphicItemImgs.join('');
