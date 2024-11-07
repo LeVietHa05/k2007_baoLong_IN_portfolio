@@ -13,6 +13,15 @@
     }
   </style>
   <script src="../javascripts/data.js"></script>
+  <style>
+    section.gallery {
+      transition: all 1s ease-in-out;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
 </head>
 
 <body>
@@ -20,116 +29,50 @@
   <header class=" d-flex">
     <nav class="d-flex  t-size-2em" id="nav">
       <ul class="d-flex ">
-        <li class="text-uppercase d-iblock ">info</li>
+        <li class="text-uppercase d-iblock ">about</li>
         <li class="text-uppercase d-iblock sub-nav-hover" style="margin-left: 40px ; width: 10rem;">
           <p>work<i class=" fas fa-caret-down"></i></p>
           <ul id="sub-nav">
-            <li>Graphic design</li>
-            <li>3d</li>
-            <li>fashion design</li>
-            <li>photoshoots</li>
+            <li onclick="toHref(`/index/graphic`)">Graphic design</li>
+            <li onclick="toHref(`/3d/3d`)">3d</li>
+            <li onclick="toHref(`/index/fashion`)">fashion design</li>
+            <li onclick="toHref(`/index/photoshoots`)">photoshoots</li>
           </ul>
         </li>
       </ul>
     </nav>
     <div id="author-name" class="text-uppercase t-size-2em " style=" width: 100%;">
-      <p>le nguyen bao long</p>
+      <p><a href="/">le nguyen bao long</a></p>
     </div>
   </header>
 
   <div id="menu">
-    <p style=" text-align: center; font-size: 9rem; margin: auto;" class="text-uppercase">
-      <!-- TODO:  make it like this: mschf.com  --> 
-       <!-- TODO: move-to-new-page-onclick -->
+    <!-- <p style=" text-align: left; font-size: 7.5rem; margin: auto; width: 50%;" class="text-uppercase">
       <span>#1. Graphic design</span><br>
       <span>#2. 3d</span><br>
       <span>#3. fashion design</span><br>
       <span>#4. photoshoots</span><br>
-    </p>
+    </p> -->
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="">
+        <p>#1. </p>
+        <p>#2. </p>
+        <p>#3. </p>
+        <p>#4. </p>
+      </div>
+      <div class="" style="margin-left: 20px;">
+        <p class="js-menu-click" onclick="toHref(`/index/graphic`)">Graphic design</p>
+        <p class="js-menu-click" onclick="toHref(`/3d/3d`)">3d</p>
+        <p class="js-menu-click" onclick="toHref(`/index/fashion`)">fashion design</p>
+        <p class="js-menu-click" onclick="toHref(`/index/photoshoots`)">photoshoots</p>
+      </div>
+    </div>
   </div>
-
-  <section id="graphic" class="d-grid gallery">
-    <!-- TODO: smaller-main  -->
-  </section>
-
-  <script>
-    let graphic = document.getElementById('graphic');
-    let graphicKeys = Object.keys(graphicData);
-    let graphicItemImgs = graphicKeys.map(item => {
-
-      return `<div class="gallery-item">
-        <img src="${graphicData[item].thumbnail}" alt="">
-        <div class="overlay">
-          <div class="overlay-text">${graphicData[item].overlay_text}<br><span class="overlay-year">${graphicData[item].overlay_year}</span></div>
-        </div>
-      </div>`
-    })
-    graphic.innerHTML = graphicItemImgs.join('');
-
-    let graphicItems = document.querySelectorAll('#graphic .gallery-item');
-    graphicItems.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        window.location.href = graphicData[graphicKeys[index]].href;
-      })
-    })
-  </script>
-
-  <section id="3d" class="gallery">
-    <div class="gallery-item">
-      <img src="./images/3d_img_1.png" alt="">
-      <div class="overlay" onclick="bigView('./images/3d_img_1.png')">
-        <div class="overlay-text"><br><span class="overlay-year">
-            </span></div>
-      </div>
-    </div>
-    <div class="gallery-item">
-      <img src="./images/3d_img_2.png" alt="">
-      <div class="overlay" onclick="bigView('./images/3d_img_2.png')">
-        <div class="overlay-text"><br><span class="overlay-year">
-            </span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="fashion" class="gallery">
-    <div class="gallery-item">
-      <img src="./images/fashion_img_1.png" alt="">
-      <div class="overlay"  onclick="toHref('/fashion/equinox')">
-        <div class="overlay-text">equinox<br><span class="overlay-year">july
-            2024</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="photoshoots" class="gallery p-body-bottom">
-  </section>
-
 
   <div id="bigview">
 
   </div>
 
-  <script>
-    let photoshoots = document.getElementById('photoshoots');
-    let photoshootsKeys = Object.keys(photoshootsData);
-    let photoshootsItemImgs = photoshootsKeys.map(item => {
-
-      return `<div class="gallery-item">
-        <img src="${photoshootsData[item].thumbnail}" alt="">
-        <div class="overlay">
-          <div class="overlay-text">${photoshootsData[item].overlay_text}<br><span class="overlay-year">${photoshootsData[item].overlay_year}</span></div>
-        </div>
-      </div>`
-    })
-    photoshoots.innerHTML = photoshootsItemImgs.join('');
-
-    let photoshootsItems = document.querySelectorAll('#photoshoots .gallery-item');
-    photoshootsItems.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        window.location.href = photoshootsData[photoshootsKeys[index]].href;
-      })
-    })
-  </script>
 
   <footer id="footer" class=" d-flex align-items-center justify-content-center" style="gap: 32px; padding: 12px 0;">
     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,35 +98,7 @@
     function toHref(href) {
       window.location.href = href
     }
-    //hide all section until click the menu or nav 
-    let sections = document.querySelectorAll('section');
-    sections.forEach(item => {
-      item.style.display = 'none';
-    })
-
-    //show section when click the menu
-    let menu = document.getElementById('menu');
-    let menuItems = menu.querySelectorAll('span');
-    menuItems.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        sections.forEach(item => {
-          item.style.display = 'none';
-        })
-        sections[index].style.display = 'grid';
-      })
-    })
-
-    //show the section when click the nav
-    let sub_nav_items = document.querySelectorAll('#sub-nav li');
-    sub_nav_items.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        sections.forEach(item => {
-          item.style.display = 'none';
-        })
-        sections[index].style.display = 'grid';
-      })
-    })
-
+   
     //big view
 
     bigview.addEventListener('click', function () {

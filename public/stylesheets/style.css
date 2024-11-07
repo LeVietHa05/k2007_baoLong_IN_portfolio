@@ -64,6 +64,7 @@ img {
   font-size: 2em;
 }
 
+
 .p-body-bottom {
   padding-bottom: 112px;
 }
@@ -126,11 +127,30 @@ header {
 #menu {
   margin-top: calc(48px * 2 + 96px);
   padding: 48px 20px;
+  font-size: 8rem;
+  text-align: left;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: all 1s ease-in-out;
 }
 
-#menu p span:hover {
+#menu p:hover, #back-menu:hover {
   color: white;
   cursor: pointer;
+}
+
+#main-hoder {
+  transition: all 1s ease-in-out;
+}
+
+#back-menu {
+  text-align: center;
+  font-size: 5rem;
+  display: none;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #footer {
@@ -199,7 +219,7 @@ header {
   opacity: 0.8;
 }
 .overlay-text {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   position: absolute;
   top: 50%;
   left: 50%;

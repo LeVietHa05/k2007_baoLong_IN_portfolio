@@ -53,24 +53,29 @@
         </svg>
     </div>
 
-    <section id="3d" class="gallery">
-        <div class="gallery-item">
-            <img src="../images/3d_img_1.png" alt="">
-            <div class="overlay" onclick="bigView('./images/3d_img_1.png')">
-                <div class="overlay-text"><br><span class="overlay-year">
-                    </span></div>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="../images/3d_img_2.png" alt="">
-            <div class="overlay" onclick="bigView('./images/3d_img_2.png')">
-                <div class="overlay-text"><br><span class="overlay-year">
-                    </span></div>
-            </div>
-        </div>
+    <section id="photoshoots" class="gallery p-body-bottom">
     </section>
+    <script>
+        let photoshoots = document.getElementById('photoshoots');
+        let photoshootsKeys = Object.keys(photoshootsData);
+        let photoshootsItemImgs = photoshootsKeys.map(item => {
 
+            return `<div class="gallery-item">
+        <img src=".${photoshootsData[item].thumbnail}" alt="">
+        <div class="overlay">
+          <div class="overlay-text">${photoshootsData[item].overlay_text}<br><span class="overlay-year">${photoshootsData[item].overlay_year}</span></div>
+        </div>
+      </div>`
+        })
+        photoshoots.innerHTML = photoshootsItemImgs.join('');
 
+        let photoshootsItems = document.querySelectorAll('#photoshoots .gallery-item');
+        photoshootsItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                window.location.href = photoshootsData[photoshootsKeys[index]].href;
+            })
+        })
+    </script>
 
     <div id="bigview">
 
