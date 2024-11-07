@@ -11,7 +11,7 @@ html {
 body {
   min-width: 1400px;
   color: #85898d;
-  background-color: #1b1b1b;
+  background-color: #000;
   font: 14px Helvetica, Arial, sans-serif;
 }
 
@@ -78,13 +78,13 @@ header {
   right: 0;
   left: 0;
   z-index: 1000;
-  background-color: #1b1b1b;
+  background-color: #000;
 }
 
 #nav {
   padding: 12px 117px;
   color: #85898d;
-  background-color: #1b1b1b;
+  background-color: #000;
   font-family: "BBManualMono";
   position: relative;
 }
@@ -138,7 +138,7 @@ header {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #1b1b1b;
+  background-color: #000;
 }
 
 #footer svg:hover path {
@@ -150,6 +150,10 @@ header {
   display: grid;
   gap: 0;
   grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+  max-width: 1368px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery img {
