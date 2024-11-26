@@ -68,8 +68,8 @@ let graphicData = {
     vong_nga: {
         thumbnail: "./images/grad_img_4.png",
         imgs: [
-            "./images/grad_vong_nga_ (1).png",
             "./images/grad_vong_nga_ (2).png",
+            "./images/grad_vong_nga_ (1).png",
         ],
         overlay_text: "Vong Nga",
         overlay_year: "April 2024",
