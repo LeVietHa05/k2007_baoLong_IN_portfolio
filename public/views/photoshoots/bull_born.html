@@ -91,36 +91,7 @@
 
   </footer>
 
-    <script>
-//         let bull_born = document.getElementById('bull_born');
-//         let bull_bornData = photoshootsData['bull_born'];
-//         let bull_bornItemImgs = bull_bornData.imgs.map(item => {
-// 
-//             return `<div class="gallery-item">
-//             <img src="../${item}" alt="">
-//             <div class="overlay" onclick="bigView('${item}')">
-//                
-//             </div>
-//         </div>`;
-//         });
-// 
-//         bull_born.innerHTML = bull_bornItemImgs.join('');
-
-        let bigview = document.getElementById('bigview');
-
-        bigview.addEventListener('click', function () {
-            bigview.style.display = 'none';
-        });
-        function bigView(img) {
-            console.log(img);
-            bigview.innerHTML = `<img src="../${img}" alt="">`;
-            bigview.style.display = 'flex';
-        }
-
-    function toHref(href) {
-        window.location.href = href
-    }
-    </script>
+    <script src="../javascripts/index.js"></script>
 </body>
 
 </html>
