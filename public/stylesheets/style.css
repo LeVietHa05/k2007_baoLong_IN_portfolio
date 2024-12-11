@@ -267,7 +267,8 @@ header {
 #hanoi_model,
 #rock_club,
 #song_vien,
-#Fequinox {
+#Fequinox,
+#about {
   max-width: 1368px;
   margin: auto;
   display: flex;

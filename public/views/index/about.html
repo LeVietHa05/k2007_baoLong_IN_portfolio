@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Mi Chau</title>
+    <title>Bao Long</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -11,11 +11,17 @@
             font-family: 'BBManualMono';
             src: url(../fonts/font1.otf);
         }
-        #mi_chau > div {
-            aspect-ratio: 3/2;
+    </style>
+    <script src="../javascripts/data.js"></script>
+    <style>
+        section.gallery {
+            transition: all 1s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
-    <script src="../../javascripts/data.js"></script>
 </head>
 
 <body>
@@ -35,37 +41,46 @@
                 </li>
             </ul>
         </nav>
-        <div id="author-name" class="text-uppercase t-size-3em " style=" width: 100%;">
+        <div id="author-name" class="text-uppercase t-size-2em " style=" width: 100%;">
             <p><a href="/">le nguyen bao long</a></p>
         </div>
     </header>
 
-    <div id="mi_chau" class="gallery mt-special">
-        <div>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ihy5JhzTnes"
-                title="MI CHAU - MIXED MEDIA 1" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div>
-            <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/w-GJINRsOyQ" title="MI CHAU - MIXED MEDIA 2"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div>
-            <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/PbAAT_R0EVE" title="MI CHAU - MIXED MEDIA 3"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div>
-            <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/VPyScTIXfMk" title="MI CHAU - MIXED MEDIA 4"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+
+    <div id="back-menu" class="border-test">
+        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="89" viewBox="0 0 49 89" fill="none">
+            <path d="M47 2L4.5 44.5L47 87" stroke="white" stroke-opacity="0.5" stroke-width="5" />
+        </svg>
     </div>
+
+    <section id="about" class="d-flex " style="color: #FFF;
+text-align: center;
+font-family: Helvetica;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+/* margin-top: 137px; */
+height: 100%;
+justify-content: space-evenly;">
+        <div>
+            Bao-Long is a multidisciplinary designer based in Hanoi, currently serving as Creative Director at Ga Mén.
+        </div>
+        <div style="color: #85898D;
+text-align: center;
+font-family: Helvetica;
+font-size: 32px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;">
+            “I explore Arts and Design through the lens of Vietnamese cultures. From the graffiti-adorned steel bridges
+            of Thanh Hoa
+            to Hanoi's honey-tinted walls and the indigo-dyed fabrics of Son La, I aim to document the vibrant lives and
+            stories
+            woven into these scenes.”
+        </div>
+    </section>
+
 
     <div id="bigview">
 
@@ -90,22 +105,7 @@
         </svg>
     </footer>
 
-    <script>
-        //         let mi_chau = document.getElementById('mi_chau');
-        //         let mi_chauData = graphicData['mi_chau'];
-        //         let mi_chauItemImgs = mi_chauData.imgs.map(item => {
-        // 
-        //             return `<div class="gallery-item">
-        //             <img src="../${item}" alt="">
-        //             <div class="overlay" onclick="bigView('${item}')">
-        //                
-        //             </div>
-        //         </div>`;
-        //         });
-        // 
-        //         mi_chau.innerHTML = mi_chauItemImgs.join('');
 
-    </script>
     <script src="../javascripts/index.js"></script>
 </body>
 
