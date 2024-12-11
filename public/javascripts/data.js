@@ -248,7 +248,7 @@ let photoshootsData = {
             "./images/photo_ascendancy_ (10).png",
             "./images/photo_ascendancy_ (11).png",
         ],
-        overlay_text: "the ascendancy",
+        overlay_text: "The Ascendancy Under No",
         overlay_year: "May 2024",
         href: "/photoshoots/ascendancy"
     },
